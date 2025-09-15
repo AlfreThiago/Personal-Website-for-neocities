@@ -1,0 +1,14 @@
+.intro {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    max-width: 600px;
+    align-items: center;
+}
+
+.language {
+    padding-bottom: 5px;
+}
