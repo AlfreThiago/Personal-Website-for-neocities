@@ -1,9 +1,18 @@
 const translations = {
     'pt-BR': {
+        Intro: "Olá! Bem-vinde ao meu Quarto Digital. Sou Alfre, tenho 19 anos, sou NB, mais especificamente Agenero, uso todos os pronomes (prefiro elu/delu), para saber mais sombre mim explore este estranho lugar.",
+
+        selec: "Mudar o Idioma"
     },
     'en': {
+        Intro: "Hello! Welcome to my Digital Room. Im Alfre, i have 19y, im Enby, more specifically Agender, i use all pronouns (but i prefer they/them/it), to know more about me explore this weird place.",
+
+        selec: "Change Lenguage"
     },
     'es': {
+        Intro: "¡Hola! Bienvenido a mi Cuarto Digital. Soy Alfre, tengo 19 años, soy NB, más específicamente, Agenero. Uso todos los pronombres (prefiero neutro). Para saber más sobre mí, explora este extraño lugar.",
+
+        selec:"Cambiar Idioma"
     }
 };
 
@@ -42,3 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     changeLanguage(userPreferredLanguage);
 });
+
+const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            changeLanguage(selectedLanguage);
+        });
+    }
+
+    let userPreferredLanguage = localStorage.getItem('userLanguage') || 'en';
+    if (languageSelect) {
+        languageSelect.value = userPreferredLanguage;
+    }
