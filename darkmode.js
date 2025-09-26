@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleTemaBtn = document.getElementById('toggleTemaBtn');
+    const togglethemeBtn = document.getElementById('togglethemeBtn');
     const bodyElement = document.body;
 
-    toggleTemaBtn.addEventListener('click', function() {
-        bodyElement.classList.toggle('tema-claro');
-        bodyElement.classList.toggle('tema-escuro');
+    togglethemeBtn.addEventListener('click', function() {
+        bodyElement.classList.toggle('light-mode');
+        bodyElement.classList.toggle('dark-mode');
 
-        if (bodyElement.classList.contains('tema-escuro')) {
-            localStorage.setItem('tema', 'escuro');
+        if (bodyElement.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
         } else {
-            localStorage.setItem('tema', 'claro');
+            localStorage.setItem('theme', 'claro');
         }
     });
 
-    const savedTheme = localStorage.getItem('tema');
-    if (savedTheme === 'escuro') {
-        bodyElement.classList.remove('tema-claro');
-        bodyElement.classList.add('tema-escuro');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        bodyElement.classList.remove('light-mode');
+        bodyElement.classList.add('dark-mode');
     } else {
-        bodyElement.classList.remove('tema-escuro');
-        bodyElement.classList.add('tema-claro');
+        bodyElement.classList.remove('dark-mode');
+        bodyElement.classList.add('light-mode');
     }
 });
